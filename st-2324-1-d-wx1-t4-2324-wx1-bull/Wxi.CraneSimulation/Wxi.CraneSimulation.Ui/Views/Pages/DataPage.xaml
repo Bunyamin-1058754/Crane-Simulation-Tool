@@ -1,0 +1,35 @@
+<Page
+    x:Class="Wxi.CraneSimulation.Ui.Views.Pages.DataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Wxi.CraneSimulation.Ui.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="DataPage"
+    d:DataContext="{d:DesignInstance local:DataPage,
+                                     IsDesignTimeCreatable=False}"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    ScrollViewer.CanContentScroll="False"
+    mc:Ignorable="d" Loaded="Page_Loaded" Height="1080" Width="1920">
+
+    <Grid>
+        <ui:Button x:Name="btnConnect" Content="Connect" Margin="207,772,0,0" VerticalAlignment="Top" Click="BtnConnect_Click" Height="38" Width="97"/>
+        <ui:Button x:Name="btnDisconnect" Content="Disconnect" Margin="325,772,0,0" VerticalAlignment="Top" IsEnabled="False" Click="BtnDisconnect_Click" Height="38" Width="97"/>
+        <Ellipse x:Name="elEmergencyButton" HorizontalAlignment="Left" Height="38" Margin="1478,766,0,0" Stroke="Black" VerticalAlignment="Top" Width="38" Fill="Red" Opacity="0.5"/>
+        <Ellipse x:Name="elMovementButton" HorizontalAlignment="Left" Height="38" Margin="1538,766,0,0" Stroke="Black" VerticalAlignment="Top" Width="38" Fill="Yellow"/>
+        <Border Margin="207,330,0,483" Width="494" CornerRadius="8" HorizontalAlignment="Left" BorderBrush="White" BorderThickness="2" >
+            <ListBox x:Name="lstCranePosition" BorderThickness="1,1,12,1" Background="White" BorderBrush="White" Margin="0,1,-1,-1" Height="267" FontSize="16"/>
+        </Border>
+        <Border Margin="1082,326,0,489" Height="265" Width="494" CornerRadius="8" HorizontalAlignment="Left" BorderBrush="White" BorderThickness="2">
+            <ListBox x:Name="lstContainerPosition" Margin="0,1,-1,-1" FontSize="16"/>
+        </Border>
+        <Label x:Name="lblCranePosition" Content="Crane position" HorizontalAlignment="Left" Margin="416,296,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblContainerPosition" Content="Container position" HorizontalAlignment="Left" Margin="1280,296,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblStatus" Content="Disconnected" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <ui:Image x:Name="python" HorizontalAlignment="Left" CornerRadius="8" Margin="706,0,0,0" VerticalAlignment="Top" Height="416" Width="371"/>
+        <Ellipse x:Name="elStatusButton" HorizontalAlignment="Left" Height="20" Margin="10,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="20" Fill="Red" RenderTransformOrigin="0.625,0.515"/>
+    </Grid>
+</Page>
